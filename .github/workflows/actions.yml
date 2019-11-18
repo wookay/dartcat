@@ -1,0 +1,17 @@
+name: CI
+
+on: [pull_request, push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: google/dart:latest
+    steps:
+    - uses: actions/checkout@master
+    - name: cd cli
+      run: cd cli
+    - name: Install dependencies
+      run: pub get
+    - name: runtests
+      run: pub run test
