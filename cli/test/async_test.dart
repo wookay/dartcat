@@ -2,7 +2,7 @@ import 'dart:async';
 
 // https://dart.dev/codelabs/async-await
 
-void createOrderMessage () async {
+void createOrderMessage() async {
   var order = await getUserOrder();
   print("order: $order");
   assert(order == "Large Latte");
